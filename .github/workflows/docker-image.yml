@@ -7,6 +7,11 @@ on:
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:      # creates a button to execute from outside of repo
+    inputs:
+      image_version:
+        description: 'Please specify a version'
+        required: false 
+        default: "latest"
 
 jobs:
 
@@ -33,9 +38,9 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./Dockerfile
+          file: ./tools/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/tools:latest
+          tags: "${{ secrets.DOCKER_HUB_USERNAME }}/tools:latest"
 
 
 
