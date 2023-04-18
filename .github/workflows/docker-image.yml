@@ -13,6 +13,11 @@ on:
         required: false
         default: "latest"
 
+      image_version:
+        description: 'Please specify a version'
+        required: false
+        default: "tools"
+
 
 
 
