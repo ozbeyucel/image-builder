@@ -10,7 +10,7 @@ on:
     inputs:
       image_version:
         description: 'Please specify a version'
-        required: true
+        required: false
         default: "latest"
 
 
